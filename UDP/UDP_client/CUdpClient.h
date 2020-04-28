@@ -10,14 +10,21 @@
 class CUdpClient
 {
 public:
-	CUdpClient() { startup(); createSocket(); };
-	~CUdpClient() { cleanup(); };
+	CUdpClient() 
+	{ 
+		startup();
+		createSocket(); 
+	};
+	~CUdpClient()
+	{ 
+		cleanup(); 
+	};
 
 private:
 	bool startup()
 	{
 		WSADATA wsa_data{};
-		//
+	
 		int error{ WSAStartup(MAKEWORD(2, 2), &wsa_data) };
 
 		if (error != 0)

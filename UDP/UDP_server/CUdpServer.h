@@ -119,11 +119,12 @@ private:
 		return true;
 	}
 
+	//set host addresse(
 	void setHostAddr()
 	{
 		char buf[256]{};
 
-		//sizeof는 배열의 크기가 아니라 배열의 크기이다.
+		//sizeof는 배열의 크기가 아니라 자료형의 크기이다.
 		if (gethostname(buf, (int)(sizeof(buf) / sizeof(char))) == SOCKET_ERROR)
 		{
 			printf("error! code: %d\n", WSAGetLastError());
